@@ -22,3 +22,5 @@
 2. Establish two functions:<br>
 • One function to list the individual stocks selected by the user.<br>
 • Another function to delete the individual stocks selected by the user.<br>
+
+__After scraping the list of codes from the Taiwan Stock Exchange, display it in the left column of the window and create a drop-down menu for user selection.__
