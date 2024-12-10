@@ -119,3 +119,19 @@ for j in range(len(list_find)):
     # 寫入csv檔----------------------
     stockdf.to_csv('stock_code' + str(list_find[j]) + '.csv', mode='a', header=False)
 ```
+
+__Output CSV.__
+
+![My Image](pic4.png)
+
+# Plotting the Efficient Frontier
+
+After obtaining the necessary data:<br>
+
+After obtaining the necessary data:<br>
+1. Use a minimization method to find the minimum variance portfolio.<br>
+2. Convert the previously scraped monthly returns of individual stocks into a DataFrame and calculate the covariance matrix and expected returns.<br>
+3. Constraints are set to ensure that the sum of all weights equals 1 (short selling is not considered), and the weighted sum of expected returns meets the preset expected return.<br>
+4. Use the solver's minimize method to find the minimum variance portfolio, which represents the investment weights for each stock.<br>
+
+![My Image](pic5.png)
