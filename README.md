@@ -16,6 +16,30 @@
 4. Draw the efficient frontier after calculations using Python.<br>
 5. Conduct Monte Carlo analysis using Excel.<br>
 
+```python
+import scipy.optimize as solver
+import matplotlib.pyplot as plt
+import tkinter.font as tkFont
+import tkinter.messagebox
+import tkinter as tk
+import pandas as pd
+import numpy as np
+import requests
+import random
+import string
+import time
+import json
+import ssl
+from pathlib import Path
+from functools import reduce
+from PIL import Image, ImageTk
+from bs4 import BeautifulSoup
+from pandas.core.frame import Dataframe
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+```
+
+
 # Plotting the Efficient Frontier
 
 1.  Using PIL and tkinter packages: Create a GUI window, background, and input-output list fields.<br>
