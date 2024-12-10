@@ -78,3 +78,44 @@ __User Interface: Debug__
 ![My Image](pic3.png)
 
 __Web Crawler__
+
+```python
+# waiting time (random)
+waiting_time = [1, 2, 3, 4, 5]
+for j in range(len(list_find)):
+  print("爬取第" + str(j + 1) + "檔股票中")
+  roi_list = []
+
+  for k in range(12):
+    month = datetime.now() + relativedelta(months = k - 11)
+    month = month.strftime('%Y%m%d')
+
+    uri = 'https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=' # 台灣證券交易所
+    uri_find = uri + month + '&stockNo=' + str(list_find[j])
+    res = requests.get(uri_find)
+    stock_json = res.json()
+
+
+    # 1/17----------------------
+    stockdf = pd.DataFrame.from_dict(stock_json['data'])
+    # df = df.append(stockdf, ignore_index = True)
+
+
+    daily_first = float(stock_json['data'][0][3].translate(str.maketrans('', '', string.punctuation))) # 月初開盤價
+    daily_last = float(stock_json['data'][-1][-3].translate(str.maketrans('', '', string.punctuation))) # 最近或月底收盤價
+    roi = (daily_last - daily_first) / daily_first # 月報酬率
+    roi_list.append(roi)
+
+    print("爬取第" + str(k - 11) + "個月中")
+    print(uri_find)
+    print(stockdf.head()) # 先看看資料集長怎樣----------------------
+    # df.columns = ['日期', '成交股數', '成交金額', '開盤價', '最高價', '最低價', '收盤價', '漲跌價差', '成交筆數']
+    # 寫入csv檔----------------------
+    # stockdf.to_csv("stock_code" + str(j + 1) + str(k - 11) + ".csv")
+    datadf.append(stockdf) # ----------------------
+
+    actual_waiting_time = random.choice(waiting_time)
+    time.sleep(actual_waiting_time)
+    # 寫入csv檔----------------------
+    stockdf.to_csv('stock_code' + str(list_find[j]) + '.csv', mode='a', header=False)
+```
