@@ -66,3 +66,4 @@ for name in st_list:
   all_stock.append(names)
 print(all_stock)
 ```
+
