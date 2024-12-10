@@ -24,3 +24,21 @@
 • Another function to delete the individual stocks selected by the user.<br>
 
 __After scraping the list of codes from the Taiwan Stock Exchange, display it in the left column of the window and create a drop-down menu for user selection.__
+
+```python
+import requests
+from bs4 import BeautifulSoup
+all_stock =[]
+
+res = requests.get("https://www.twse.com.tw/zh/stockSearch/stockSearch")
+html = BeautifulSoup(res.text, "html.parser")
+
+st_list = html.findAll("td")
+
+row = 2
+for name in st_list:
+  names = name.text
+  row += 1
+  all_stock.append(names)
+print(all_stock)
+```
