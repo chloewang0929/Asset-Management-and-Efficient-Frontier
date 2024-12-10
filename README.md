@@ -67,3 +67,14 @@ for name in st_list:
 print(all_stock)
 ```
 
+![My Image](pic1.png)
+
+__User Interface: Stock Picking__
+
+![My Image](pic2.png)
+
+__User Interface: Debug__
+
+![My Image](pic3.png)
+
+__Web Crawler__
