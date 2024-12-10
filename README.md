@@ -128,10 +128,19 @@ __Output CSV.__
 
 After obtaining the necessary data:<br>
 
-After obtaining the necessary data:<br>
 1. Use a minimization method to find the minimum variance portfolio.<br>
 2. Convert the previously scraped monthly returns of individual stocks into a DataFrame and calculate the covariance matrix and expected returns.<br>
 3. Constraints are set to ensure that the sum of all weights equals 1 (short selling is not considered), and the weighted sum of expected returns meets the preset expected return.<br>
 4. Use the solver's minimize method to find the minimum variance portfolio, which represents the investment weights for each stock.<br>
 
 ![My Image](pic5.png)
+
+1101 台泥 78.82%
+2330 台積電 40.17%
+2515 中工 -18.98%
+
+# Using Excel for Monte Carlo Analysis
+
+To understand the possible profit and loss limits of such an investment, we use the following model to implement the Monte Carlo simulation.
+
+![My Image](pic6.png)
